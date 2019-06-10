@@ -6,4 +6,4 @@ before_install:
   - docker build -t cksiew/docker-react -f Dockerfile.dev .
 
 script:
-  - docker run cksiew/docker-react npm test --forceExit
+  - docker run -e CI=true cksiew/docker-react npm test -- --coverage
